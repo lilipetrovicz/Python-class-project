@@ -124,7 +124,6 @@ def run_simulation(seq1, trials, mode="any"):
     and return a dictionary of counts, e.g. {"silent": 241, "missense": 690, ...}.
     mode="substitution" uses only substitute(); mode="any" uses random_mutation()."""
     counts = {"silent": 0, "missense": 0, "nonsense": 0, "frameshift": 0}
-   counts = {"silent": 0, "missense": 0, "nonsense": 0, "frameshift": 0}
 
     for i in range(trials):
         if mode == "any":
