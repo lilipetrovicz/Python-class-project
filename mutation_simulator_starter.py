@@ -173,8 +173,18 @@ def plot_results(counts, title="Effects of random mutations"):
 def demo_one_mutation(seq):
     """Show one mutation step by step: original DNA and protein, the mutation,
     mutated DNA and protein, and the classification."""
-    # TODO
-    pass
+    original_protein = translate(seq)
+    print("Original DNA:", seq)
+    print("Original protein:", original_protein)
+    new_seq, kind, pos = random_mutation(seq)
+    mutated_protein = translate(new_seq)
+    effect_classification = classify(original_protein, mutated_protein, kind)
+
+    print("\nMutation type:", kind)
+    print("Mutation position:", pos)
+    print("Mutated DNA:", new_seq)
+    print("Mutated protein:", mutated_protein)
+    print("Effect on protein:", effect_classification)
 
 
 # ---------------------------------------------------------------------------
