@@ -103,7 +103,15 @@ def classify(original_protein, mutated_protein, kind):
     - a shorter mutated protein means "nonsense"
     - anything else is "missense"
     """
-    # TODO
+    if kind in ["insertion", "deletion"]:
+        return "frameshift"
+
+    if original_protein == mutated_protein:
+        return "silent"
+    elif len(mutated_protein) < len(original_protein):
+        return "nonsense"
+    else:
+        return "missense"
     pass
 
 
